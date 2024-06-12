@@ -1,0 +1,78 @@
+
+.switch-container {
+  margin-top: 60px; 
+}
+
+.switch-label-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px; 
+}
+
+.heading-large {
+  padding-top: 40px;
+  font-size: 4rem !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+} 
+
+
+.spotify-embed {
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.mainbtn{
+  margin-top: 40px;
+}
+
+.bt1 {
+  margin-top: 20px !important;
+  font-weight: bold !important; 
+  margin-bottom: 20px !important;
+  background-color: #1CB955 !important;
+  padding: 10px;
+  transition: padding 0.3s ease !important;
+}
+
+.bt1:hover {
+  /* Increase padding on hover */
+  padding-left: 17px !important; /* Ensure the hover style is applied */
+  padding-right: 17px !important; /* Ensure the hover style is applied */
+}
+
+
+.spotify-embed {
+  border-color:#30A46C; /* color on hover */
+  border-width: 2px;
+}
+
+.mainbtn {
+  /* Set initial padding */
+  padding: 10px !important;
+  background-color: #1CB955 !important;
+
+  /* Apply transition for smooth animation */
+  transition: padding 0.3s ease !important;
+}
+
+.mainbtn:hover {
+  background-color: #1CB955 !important;
+
+  /* Increase padding on hover */
+  padding: 20px !important;
+}
+.head {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 40px;
+  font-size: 2.1rem !important; /* Adjust the size as needed */
+}
+
+.heading-medium {
+  padding-top: 40px;
+  font-size: 2.1rem !important;
+}
