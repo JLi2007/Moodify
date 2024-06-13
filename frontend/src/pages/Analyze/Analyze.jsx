@@ -3,7 +3,7 @@ import { Button } from "@radix-ui/themes";
 import "./Analyze.css";
 import { MagicWandIcon } from "@radix-ui/react-icons";
 
-import sendPrediction, {prediction}  from "../../../detection/src/Common/tensorflowPredictions";
+import sendPrediction, {prediction} from "../../../detection/src/Common/tensorflowPredictions.js";
 
 const Analyze = () => {
   return (

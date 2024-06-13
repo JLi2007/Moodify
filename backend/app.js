@@ -1,4 +1,4 @@
-const { connectToMongo, closeMongo } = require('./mongo');
+// const { connectToMongo, closeMongo } = require('./mongo');
 
 const express = require('express');
 const cors = require('cors');
@@ -19,15 +19,15 @@ const port = 4001;
 // app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 app.listen(port, () => console.log(`Backend Running ${port}`));
 
-connectToMongo().catch((error) => { 
-    console.error("Failed to connect to MongoDB:", error);
-    process.exit(1); 
-});
+// connectToMongo().catch((error) => { 
+//     console.error("Failed to connect to MongoDB:", error);
+//     process.exit(1); 
+// });
 
-process.on('SIGINT', async()=>{
-    console.log("SHUTTING DOWN MONGO ...");
-    await closeMongo();
-    process.exit(0);
-})
+// process.on('SIGINT', async()=>{
+//     console.log("SHUTTING DOWN MONGO ...");
+//     await closeMongo();
+//     process.exit(0);
+// })
 
 

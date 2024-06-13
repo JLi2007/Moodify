@@ -1,5 +1,6 @@
 
 # Welcome to Moodify
+# Initially a hackathon project but I'm adding extra features and fixing the errors
 
 Moodify, a web-app build from reactjs, compiles your mood and generates Spotify playlists with knowledge to such info. 
 ## Roadmap

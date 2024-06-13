@@ -2,8 +2,6 @@ import { EMOTIONS, NO_MODEL } from "../Constants/emotionRecognizer.constant";
 import * as tf from "@tensorflow/tfjs";
 import magnifyResults from "./magnifyResults";
 import { treatImg } from "./tensorflowImages";
-import { useContext } from 'react'
-import { useEmotion } from "../../../src/contexts/EmotionContext";
 
 let prediction = ''
 
@@ -35,3 +33,28 @@ const getPrediction = () => {
 }
 
 export { predict, prediction, getPrediction };
+
+const sendPrediction = (p) => {
+  const data = { p }
+  const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  };
+  console.log('here is data!!!!', data)
+
+  fetch('http://localhost:4000/mood',options)
+
+    .then(response => {
+      if (!response.ok) {
+          throw new Error('FAT Response');
+      }
+      return response.json();
+    })
+    .then(responseData => {
+        console.log('Response:', responseData);
+  })
+};
+export default sendPrediction;
