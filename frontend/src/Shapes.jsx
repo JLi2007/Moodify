@@ -42,8 +42,6 @@ export function Lights() {
     <>
       <ambientLight
         color="#A5E075"
-        position={[-10, -10, -10]}
-        intensity={0.5}
       />
       <spotLight color="#DE4B35" position={[-10, -10, -10]} intensity={0.2} />
       <spotLight color="#DE4B35" position={[-10, 0, 15]} intensity={0.8} />

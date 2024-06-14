@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./ReviewsList.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { boxes } from "../Box.ts";
+import { boxes } from "./Box.ts";
 
 const ReviewsList = () => {
   const reviews = [];

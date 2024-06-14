@@ -1,5 +1,5 @@
 // import { useNavigate } from "react-router-dom";
-import { Heading, Button, Flex, Text } from "@radix-ui/themes";
+import { Heading, Flex, Text } from "@radix-ui/themes";
 import { useState, useEffect } from "react";
 import "./Home.css";
 import "../../styles.css"

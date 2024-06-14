@@ -2,10 +2,10 @@ const EMOTIONS = [
   "😡 tilted : ",
   "🤮 nahhh : ",
   "😨 fear : ",
-  "😄 happy : ",
-  "🥰 glorious : ",
   "😭 cooked : ",
   "😐 nonchalant : ",
+  "😄 happy : ",
+  "🥰 glorious : ",
 ];
 
 const NO_MODEL= "❌ model not loaded yet";

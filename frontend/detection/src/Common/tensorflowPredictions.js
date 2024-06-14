@@ -45,11 +45,10 @@ const sendPrediction = (p) => {
   };
   console.log('here is data!!!!', data)
 
-  fetch('http://localhost:4000/mood',options)
-
+  fetch('http://localhost:4001/mood', options)
     .then(response => {
       if (!response.ok) {
-          throw new Error('FAT Response');
+          throw new Error('error in fetch');
       }
       return response.json();
     })

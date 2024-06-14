@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Analyze from "./pages/Analyze/Analyze.jsx";
@@ -7,15 +6,12 @@ import Settings from "./pages/Settings/Settings.jsx";
 import { TabNav } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./index.css"; // Import the CSS file
-import Logo from "./MoodifyLogo.png";
-import { createContext } from "react";
-import { useState } from "react";
-import { EmotionProvider } from "./contexts/EmotionContext.jsx";
+import Logo from "/MoodifyLogo.png";
 
 function App() {
 
   return (
-    <EmotionProvider>
+    <div>
       <div className="navbar">
         <TabNav.Root className="nav-left">
           <TabNav.Link active>
@@ -31,6 +27,9 @@ function App() {
           <TabNav.Link>
             <Link to="/playlists">Playlists</Link>
           </TabNav.Link>
+          <TabNav.Link>
+            <Link to="/settings">Settings</Link>
+          </TabNav.Link>
         </TabNav.Root>
       </div>
       <Routes>
@@ -39,7 +38,7 @@ function App() {
         <Route path="/playlists" element={<Playlists />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
-    </EmotionProvider>
+    </div>
   );
 }
 
