@@ -9,7 +9,7 @@ const ReviewsList = () => {
   const reviews = [];
   boxes.forEach((element) => {
     reviews.push(
-      <ReviewBox name={element.name} description={element.description} key={`${element.name}123`}/>
+      <ReviewBox name={element.name} contact={element.contact} description={element.description} key={`${element.name}123`}/>
     );
   });
 
@@ -27,8 +27,7 @@ const ReviewsList = () => {
     <div className="col" id="reviews-container">
       <div className="row justify-content-md-center" id="reviews-title">
         What our Customers are Saying
-      </div>
-      <div className="row justify-content-md-center" id="reviews-titlee">
+        <br />
         &darr;
       </div>
       <div className="row justify-content-md-center">

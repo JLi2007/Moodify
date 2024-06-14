@@ -2,7 +2,7 @@
 import { Heading, Flex, Text } from "@radix-ui/themes";
 import { useState, useEffect } from "react";
 import "./Home.css";
-import "../../styles.css"
+import "../../style/styles.css";
 import InteractiveButton from "../../InteractiveButton.jsx"; // Adjust the path as needed
 import { Link } from "react-router-dom";
 import ReviewsList from "../../components/ReviewsList.jsx";
@@ -65,7 +65,7 @@ const Home = () => {
           <Link to="/analyze">
             <InteractiveButton
               id="home-screen-button"
-              onTapStart={() => handleGetStartedClick}
+              // onTapStart={() => handleGetStartedClick}
             />
           </Link>
         </div>

@@ -71,9 +71,10 @@ router.post('/mood', (req, res) => {
         }
 
         if (embedUrl) {
-            res.json(`
-                <iframe style="border-radius:12px" src="${embedUrl}" width="600rem" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            `);
+            // res.json(`
+            //     <iframe style="border-radius:12px" src="${embedUrl}" width="600rem" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            // `);
+            res.json(embedUrl)
         } else {
             res.status(400).send('Emotion not recognized');
         }
