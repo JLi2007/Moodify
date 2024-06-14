@@ -43,7 +43,7 @@ const sendPrediction = (p) => {
     },
     body: JSON.stringify(data),
   };
-  console.log('here is data!!!!', data)
+  console.log('here is data:', data)
 
   fetch('http://localhost:4001/mood', options)
     .then(response => {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./ReviewBox.css";
+import "./Reviews.css";
 
 const ReviewBox = ({ name = "name", description = "description..." }) => {
   return (

@@ -1,6 +1,6 @@
 import ReviewBox from "./ReviewBox";
 import { useState } from "react";
-import "./ReviewsList.css";
+import "./Reviews.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { boxes } from "./Box.ts";

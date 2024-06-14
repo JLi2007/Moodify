@@ -41,13 +41,13 @@ Moodify, a web-app build from reactjs, compiles your mood and generates Spotify 
 Clone the project
 
 ```bash
-  git clone https://github.com/Mausmato/Moodify.git
+  git clone https://github.com/JLi2007/TS_WeatherProject_React.git
 ```
 
-Go to the project directory
+Go to the client directory
 
 ```bash
-  cd frontend
+  cd client
 ```
 
 Install dependencies
@@ -56,18 +56,27 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Run the frontend
 
 ```bash
   npm run dev
 ```
 
+Go to the server directory
 
-## Used By
+```bash
+  cd server
+```
 
-This project is used by the following companies:
+Start the server
 
-- Very Cool People.
+```bash
+  npm start
+```
+
+## Credits:
+
+[face detection model](https://github.com/clementreiffers/emotion-recognition-website-react?tab=readme-ov-file#sources)
 
 
 ![Logo](https://i.postimg.cc/rsDGBCxj/Moodify-Logo-1.png)
