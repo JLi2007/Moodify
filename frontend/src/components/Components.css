@@ -1,4 +1,4 @@
-/* latin */
+/* REVIEW LIST --------------------------------------*/
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -50,7 +50,7 @@
   }
 }
 
-/* REVIEW BOX */
+/* REVIEW BOX --------------------------------------*/
 
 #box {
   margin: 10px;

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion-3d";
 import { MotionConfig } from "framer-motion";
 import { useRef, useLayoutEffect } from "react";
-import { transition } from "./transition/transition";
+import { transition } from "../transition/transition";
 import { Canvas, useThree } from "@react-three/fiber";
-import { useSmoothTransform } from "./transition/use-smooth-transform";
+import { useSmoothTransform } from "../transition/use-smooth-transform";
 
 export function Shapes({ isHover, isPress, mouseX, mouseY }) {
   const lightRotateX = useSmoothTransform(mouseY, spring, mouseToLightRotation);

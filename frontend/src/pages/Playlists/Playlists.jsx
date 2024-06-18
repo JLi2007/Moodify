@@ -1,8 +1,8 @@
-
-import React, { useState, useEffect } from "react";
-import { Heading, Button, Flex, Text, Switch } from "@radix-ui/themes";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { useState, useEffect } from "react";
+import { Heading, Button, Flex } from "@radix-ui/themes";
+import { motion } from "framer-motion";
 import "./Playlists.css";
+import { playlists } from './playlists'
 
 const Playlists = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -28,7 +28,7 @@ const Playlists = () => {
 
   return (
     <motion.div // Wrap the content with motion.div for scroll transitions
-      className="settings playlists-container" // Apply the CSS class here
+      className="settings playlists-container" 
       initial={{ scaleY: 0 }} // Initial state
       animate={{ scaleY: 1 }} // Animation when component is present
       exit={{ scaleY: 0 }} // Animation when component is removed
@@ -38,56 +38,74 @@ const Playlists = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
-      }} // Centering styles
+      }} 
     >
       <Flex
         direction="column"
         align="center"
         justify="center"
         gap="4"
-        style={{ maxWidth: "800px", width: "100%" }} // Limiting width to maintain readability
+        style={{ maxWidth: "800px", width: "100%" }}
       >
         <Heading align="center" className="heading-large">
           {displayedText}
         </Heading>
         <Heading align="center" className="head">
-          Happy Playlist
+          Current Playlist
         </Heading>
-        <iframe
-          className="spotify-embed" // Apply the CSS class here
-          src="https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R?utm_source=generator"
-          width="600rem" // Set width to fill the container
-          height="400"
-          frameBorder="0"
-          allowFullScreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-        <Flex gap="4" justify="center">
-          {/* Flex container for the first row of buttons */}
-          <Button className="bt1">Open in Spotify</Button>
-          <Button className="bt1">Delete Playlist from Library</Button>
-        </Flex>
+        {playlists.map((playlist, index) => {
+          if (index === 0){
+            return(
+                <div key={index}>
+                  <iframe
+                    className="spotify-embed" 
+                    src= {playlist.src}
+                    width="600rem"
+                    height="400"
+                    frameBorder="0"
+                    allowFullScreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                  <Flex gap="4" justify="center">
+                    {/* Flex container for the first row of buttons */}
+                    <Button className="bt1">Open in Spotify</Button>
+                    <Button className="bt1">Delete Playlist from Library</Button>
+                  </Flex>
+                </div>
+            )
+          }
+        })}
 
         <Heading align="center" className="heading-medium">
           Previous Playlists
         </Heading>
-        <iframe
-          className="spotify-embed" // Apply the CSS class here
-          src="https://open.spotify.com/embed/playlist/2u6XF125qLChkbpjvg09l4?utm_source=generator"
-          width="600rem" // Set width to fill the container
-          height="400"
-          frameBorder="0"
-          allowFullScreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-        <Flex gap="4" justify="center">
-          {/* Flex container for the first row of buttons */}
-          <Button className="bt1">Open in Spotify</Button>
-          <Button className="bt1">Delete Playlist from Library</Button>
-        </Flex>
-        <iframe
+        {playlists.map((playlist, index) => {
+          if (index !== 0){
+            return(
+              <div key={index}>
+                <iframe
+                  className="spotify-embed" // Apply the CSS class here
+                  src = {playlist.src}
+                  width="600rem" // Set width to fill the container
+                  height="400"
+                  frameBorder="0"
+                  allowFullScreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
+                <Flex gap="4" justify="center">
+                  {/* Flex container for the first row of buttons */}
+                  <Button className="bt1">Open in Spotify</Button>
+                  <Button className="bt1">Delete Playlist from Library</Button>
+                </Flex>
+              </div>
+            )
+          }
+        })}
+        {/* BREAK */}
+
+        {/* <iframe
           className="spotify-embed" // Apply the CSS class here
           src="https://open.spotify.com/embed/playlist/0PzKm1C0ti5msFNWcHvXV1?utm_source=generator"
           width="600rem" // Set width to fill the container
@@ -98,7 +116,6 @@ const Playlists = () => {
           loading="lazy"
         ></iframe>
         <Flex gap="4" justify="center">
-          {/* Flex container for the first row of buttons */}
           <Button className="bt1">Open in Spotify</Button>
           <Button className="bt1">Delete Playlist from Library</Button>
         </Flex>
@@ -113,10 +130,9 @@ const Playlists = () => {
           loading="lazy"
         ></iframe>
         <Flex gap="4" justify="center">
-          {/* Flex container for the first row of buttons */}
           <Button className="bt1">Open in Spotify</Button>
           <Button className="bt1">Delete Playlist from Library</Button>
-        </Flex>
+        </Flex> */}
       </Flex>
     </motion.div>
   );

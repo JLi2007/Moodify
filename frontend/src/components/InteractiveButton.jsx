@@ -1,8 +1,8 @@
-import "./style/styles.css";
+import "../style/styles.css";
 import { Suspense, useState } from "react";
 import { motion, MotionConfig, useMotionValue } from "framer-motion";
 import { Shapes } from "./Shapes";
-import { transition } from "./transition/transition";
+import { transition } from "../transition/transition";
 import useMeasure from "react-use-measure";
 
 export default function App() {

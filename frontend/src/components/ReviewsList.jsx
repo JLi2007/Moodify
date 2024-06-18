@@ -1,6 +1,6 @@
 import ReviewBox from "./ReviewBox";
 import { useState } from "react";
-import "./Reviews.css";
+import "./Components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { boxes } from "./Box.ts";
@@ -9,7 +9,12 @@ const ReviewsList = () => {
   const reviews = [];
   boxes.forEach((element) => {
     reviews.push(
-      <ReviewBox name={element.name} contact={element.contact} description={element.description} key={`${element.name}123`}/>
+      <ReviewBox
+        name={element.name}
+        contact={element.contact}
+        description={element.description}
+        key={`${element.name}123`}
+      />
     );
   });
 

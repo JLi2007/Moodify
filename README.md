@@ -41,7 +41,7 @@ Moodify, a web-app build from reactjs, compiles your mood and generates Spotify 
 Clone the project
 
 ```bash
-  git clone https://github.com/JLi2007/TS_WeatherProject_React.git
+  git clone https://github.com/JLi2007/Moodify.git
 ```
 
 Go to the client directory
