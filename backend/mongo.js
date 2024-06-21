@@ -1,9 +1,15 @@
 const { MongoClient } = require('mongodb');
+const mongoose = require("mongoose");
 
-require("dotenv").config();
+require("dotenv").config()
+const { Playlist } = require('./playlist');
 
 const url = process.env.MONGO_KEY;
 const client = new MongoClient(url);
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 async function connectToMongo(){
     try{
@@ -37,5 +43,17 @@ async function insertData(collectionName, data) {
     } 
 }
 
+async function newPlaylist() {
+    try {
+      const playlist = await Playlist.create({
+        src: 'https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R?utm_source=generator',
+        time: 'matthew singer',
+        mood: 'nonchalant',
+      });
+      console.log(playlist);
+    } catch (error) {
+      console.error('Error creating new playlist:', error);
+    }
+  }
 
-module.exports = { connectToMongo, closeMongo, insertData };
+module.exports = { connectToMongo, closeMongo, insertData, newPlaylist };

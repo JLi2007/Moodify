@@ -1,10 +1,11 @@
-const { connectToMongo, closeMongo } = require('./mongo/mongo');
+const { connectToMongo, closeMongo } = require('./mongo');
 
 // const path = require('path');
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const routesHandler = require("./routes/handler");
+
 
 const app = express();
 

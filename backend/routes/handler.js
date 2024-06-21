@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { newPlaylist } = require('../mongo');
 // const { insertData } = require('../mongo');
 
-router.post('/mood', (req, res) => {
+router.post('/mood', async(req, res) => {
     const { p } = req.body;
     if (typeof p === 'string') {
         const parts = p.split(' ');
@@ -71,10 +72,8 @@ router.post('/mood', (req, res) => {
         }
 
         if (embedUrl) {
-            // res.json(`
-            //     <iframe style="border-radius:12px" src="${embedUrl}" width="600rem" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            // `);
-            res.json(embedUrl)
+            await newPlaylist();
+            res.json(embedUrl);
         } else {
             res.status(400).send('Emotion not recognized');
         }
