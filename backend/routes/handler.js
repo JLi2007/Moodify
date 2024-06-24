@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { newPlaylist } = require('../mongo');
-// const { insertData } = require('../mongo');
 
 router.post('/mood', async(req, res) => {
     const { p } = req.body;
+    var date = new Date().toLocaleString(); 
     if (typeof p === 'string') {
         const parts = p.split(' ');
         const emotion = parts[1].toLowerCase();
@@ -28,7 +28,7 @@ router.post('/mood', async(req, res) => {
                 'https://open.spotify.com/embed/playlist/4TG1uJ6I3JQHHRnS2hgNGl'
             ];
             embedUrl = happyPlaylists[Math.floor(Math.random() * happyPlaylists.length)];
-        } else if (emotion === 'angry') {
+        } else if (emotion === 'tilted') {
             const angryPlaylists = [
                 'https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R',
                 'https://open.spotify.com/embed/playlist/63mYyvMhYhJPYYJ86iTYeX',
@@ -41,7 +41,7 @@ router.post('/mood', async(req, res) => {
                 'https://open.spotify.com/embed/playlist/6Twtullm379J957wfskhS6'
             ];
             embedUrl = angryPlaylists[Math.floor(Math.random() * angryPlaylists.length)];
-        } else if (emotion === 'sad') {
+        } else if (emotion === 'cooked') {
             const sadPlaylists = [
                 'https://open.spotify.com/embed/playlist/60d30i9AHwd6j9Vorwzaku',
                 'https://open.spotify.com/embed/playlist/5irzXdNeeKc0Dg3UK4Ww6n',
@@ -72,7 +72,7 @@ router.post('/mood', async(req, res) => {
         }
 
         if (embedUrl) {
-            await newPlaylist();
+            await newPlaylist(embedUrl, date, emotion);
             res.json(embedUrl);
         } else {
             res.status(400).send('Emotion not recognized');

@@ -6,10 +6,7 @@ const { Playlist } = require('./playlist');
 
 const url = process.env.MONGO_KEY;
 const client = new MongoClient(url);
-mongoose.connect(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+mongoose.connect(url);
 
 async function connectToMongo(){
     try{
@@ -43,12 +40,12 @@ async function insertData(collectionName, data) {
     } 
 }
 
-async function newPlaylist() {
+async function newPlaylist(src, time, mood) {
     try {
       const playlist = await Playlist.create({
-        src: 'https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R?utm_source=generator',
-        time: 'matthew singer',
-        mood: 'nonchalant',
+        src: src,
+        time: time,
+        mood: mood,
       });
       console.log(playlist);
     } catch (error) {

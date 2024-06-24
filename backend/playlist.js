@@ -12,6 +12,12 @@ mongoose.connect(url)
   console.error('Error connecting to MongoDB Atlas SCHEMA:', error);
 });
 
+// //finish when login is working...
+// async function createUserDB(userID){
+//     const userDB = mongoose.connection.useDb('user');
+//     const collectionName = `${userDB}_playlists`;
+// }
+
 const playlistSchema = new Schema({
   src: { type: String, required: true },
   time: { type: String, required: true },
