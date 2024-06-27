@@ -1,24 +1,35 @@
 import ManageVideoOnCanvas from "../../../detection/src/components/ManageVideoOnCanvas";
 import { Button } from "@radix-ui/themes";
+import { Link } from "react-router-dom";
 import "./Analyze.css";
 import { MagicWandIcon } from "@radix-ui/react-icons";
-
+import {ShuffleIcon} from "@radix-ui/react-icons";
 import sendPrediction, {prediction} from "../../../detection/src/Common/tensorflowPredictions.js";
 
 const Analyze = () => {
-  return (
-    <div id="analyze-container" style={{overflow:'none'}}>
-      <ManageVideoOnCanvas/>
-      <Button 
-        onClick={() => sendPrediction(prediction)}
-        size="4"
-        id="spotify-button"
-      >
-        <MagicWandIcon />
-        Generate Playlists
-      </Button>
+  const handleButtonClick = () => {
+    sendPrediction(prediction);
+  };
 
-    <div id="output"></div>
+  return (
+    <div id="analyze-container" style={{ overflow: "none" }}>
+      <ManageVideoOnCanvas />
+
+      <div id="analyze-buttons">
+        <Button onClick={handleButtonClick} size="4" id="spotify-button">
+          <MagicWandIcon />
+          Generate Playlists
+        </Button>
+
+          <div id="div-to-playlists">
+            <Link to="/playlists">
+              <button id="button-to-playlists" size="4">
+                <ShuffleIcon/>
+                 Playlists
+                </button>
+            </Link>
+          </div>
+      </div>
     </div>
   );
 };
