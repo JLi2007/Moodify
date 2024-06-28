@@ -32,8 +32,11 @@
 }
 
 #spotify-button:hover {
-    background-color:rgb(207, 223, 203);
+    background-color:rgb(228, 238, 225);
     color: #1DB954;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: 0.3s ease-in-out;
 }
 
 #div-to-playlists{
@@ -45,9 +48,12 @@
     background-color: #1DB954;
     position: absolute;
     left: 80%;
+    gap: 10%;
 }
 
 #button-to-playlists:hover {
-    background-color:rgb(207, 223, 203);
+    padding-left: 40px;
+    background-color:rgb(228, 238, 225);
     color: #1DB954;
+    transition: 0.3s ease-in-out;
 }

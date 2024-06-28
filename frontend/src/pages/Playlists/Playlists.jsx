@@ -59,6 +59,7 @@ const Playlists = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
+        color: "rgb(228, 238, 225)",
       }}
     >
       <Flex
@@ -71,14 +72,18 @@ const Playlists = () => {
         <Heading align="center" className="heading-large">
           {displayedText}
         </Heading>
-        <Heading align="center" className="head">
+        <Heading align="center" className="heading-medium">
           Current Playlist
         </Heading>
         {playlists.length > 0 ? (
           playlists.map((playlist, index) => {
-            if (index === 0) {
+            if (index ===  (playlists.length-1)) {
               return (
                 <div key={index}>
+                  <div className="playlist-information">
+                    <h1 className="playlist-date">{playlist.time}</h1>
+                    <h1 className="playlist-mood">{playlist.mood}</h1>
+                  </div>
                   <iframe
                     className="spotify-embed"
                     src={playlist.src}
@@ -106,10 +111,14 @@ const Playlists = () => {
           Previous Playlists
         </Heading>
         {playlists.length > 1 ? (
-          playlists.map((playlist, index) => {
+          [...playlists].reverse().map((playlist, index) => {
             if (index !== 0) {
               return (
                 <div key={index}>
+                  <div className="playlist-information">
+                    <h1 className="playlist-date">{playlist.time}</h1>
+                    <h1 className="playlist-mood">{playlist.mood}</h1>
+                  </div>
                   <iframe
                     className="spotify-embed"
                     src={playlist.src}

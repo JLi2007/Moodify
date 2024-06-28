@@ -1,10 +1,10 @@
 const EMOTIONS = [
   "😡 tilted : ",
   "🤮 nahhh : ",
-  "😨 fear : ",
   "😭 cooked : ",
+  "🤭 jovial : ",
   "😐 nonchalant : ",
-  "😄 happy : ",
+  "😔 sadness : ",
   "🥰 glorious : ",
 ];
 

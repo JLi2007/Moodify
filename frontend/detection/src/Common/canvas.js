@@ -7,7 +7,7 @@ import {
 
 const _setRectStyle = (context) => {
   context.lineWidth = "1";
-  context.strokeStyle = "white";
+  context.strokeStyle = "#e4eee1";
 };
 
 const _drawRect = (context, boundingBox) => {
