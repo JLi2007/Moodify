@@ -2,7 +2,7 @@ import { EMOTIONS, NO_MODEL } from "../Constants/emotionRecognizer.constant";
 import * as tf from "@tensorflow/tfjs";
 import magnifyResults from "./magnifyResults";
 import { treatImg } from "./tensorflowImages";
-import { Push } from "../../../src/pages/Playlists/pushToPlaylist";
+// import { Push } from "../../../src/pages/Playlists/pushToPlaylist";
 
 let prediction = ''
 
@@ -55,7 +55,7 @@ const sendPrediction = (p) => {
     })
     .then(responseData => {
         console.log('Response:', responseData);
-        Push(responseData);
+        // Push(responseData);
   })
 };
 export default sendPrediction;

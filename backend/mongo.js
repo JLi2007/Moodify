@@ -40,6 +40,10 @@ async function insertData(collectionName, data) {
     } 
 }
 
+async function deleteAll(){
+    await Playlist.deleteMany({});
+}
+
 async function newPlaylist(src, time, mood) {
     try {
       const playlist = await Playlist.create({
@@ -53,4 +57,4 @@ async function newPlaylist(src, time, mood) {
     }
   }
 
-module.exports = { connectToMongo, closeMongo, insertData, newPlaylist };
+module.exports = { connectToMongo, closeMongo, deleteAll, newPlaylist };
