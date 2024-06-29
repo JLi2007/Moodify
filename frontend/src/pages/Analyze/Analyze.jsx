@@ -3,8 +3,10 @@ import { Button } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./Analyze.css";
 import { MagicWandIcon } from "@radix-ui/react-icons";
-import {ShuffleIcon} from "@radix-ui/react-icons";
-import sendPrediction, {prediction} from "../../../detection/src/Common/tensorflowPredictions.js";
+import { ShuffleIcon } from "@radix-ui/react-icons";
+import sendPrediction, {
+  prediction,
+} from "../../../detection/src/Common/tensorflowPredictions.js";
 
 const Analyze = () => {
   const handleButtonClick = () => {
@@ -13,7 +15,7 @@ const Analyze = () => {
 
   return (
     <div id="analyze-container" style={{ overflow: "none" }}>
-      <ManageVideoOnCanvas />
+      <ManageVideoOnCanvas/>
 
       <div id="analyze-buttons">
         <Button onClick={handleButtonClick} size="4" id="spotify-button">
@@ -21,14 +23,14 @@ const Analyze = () => {
           Generate Playlists
         </Button>
 
-          <div id="div-to-playlists">
-            <Link to="/playlists">
-              <button id="button-to-playlists" size="4">
-                <ShuffleIcon/>
-                 Playlists
-                </button>
-            </Link>
-          </div>
+        <div id="div-to-playlists">
+          <Link to="/playlists">
+            <button id="button-to-playlists" size="4">
+              <ShuffleIcon />
+              Playlists
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

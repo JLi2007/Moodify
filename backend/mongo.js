@@ -44,6 +44,10 @@ async function deleteAll(){
     await Playlist.deleteMany({});
 }
 
+async function deletePlaylist(playlist){
+    await Playlist.deleteOne({time: playlist.time});
+}
+
 async function newPlaylist(src, time, mood) {
     try {
       const playlist = await Playlist.create({
@@ -57,4 +61,4 @@ async function newPlaylist(src, time, mood) {
     }
   }
 
-module.exports = { connectToMongo, closeMongo, deleteAll, newPlaylist };
+module.exports = { connectToMongo, closeMongo, deleteAll, deletePlaylist, newPlaylist };

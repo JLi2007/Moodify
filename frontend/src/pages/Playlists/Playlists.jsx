@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Heading, Button, Flex } from "@radix-ui/themes";
 import { motion } from "framer-motion";
-
 import "./Playlists.css";
 // import { playlists } from "./playlists";
 
@@ -24,28 +23,47 @@ const Playlists = () => {
     }
   }, [displayedText, isTyping]);
 
-  useEffect(() => {
-    const fetchPlaylists = async () => {
-      const options = {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-
-      const response = await fetch(
-        "http://localhost:4001/mongoPlaylists",
-        options
-      );
-      if (!response.ok) {
-        throw new Error("error in fetching playlists");
-      }
-      const data = await response.json();
-      setPlaylists(data);
-      console.log("logged playlists from mongoose")
+  //fetch playlists from mongoose
+  const fetchPlaylists = async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
+
+    const response = await fetch(
+      "http://localhost:4001/mongoPlaylists",
+      options
+    );
+    if (!response.ok) {
+      throw new Error("error in fetching playlists");
+    }
+    const data = await response.json();
+    setPlaylists(data);
+    console.log("logged playlists from mongoose")
+  };
+
+  useEffect(() => {
     fetchPlaylists();
   }, []);
+
+  const deletePlaylist = async(playlist) => {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({time: playlist.time}),
+    }
+    const response = await fetch(
+      "http://localhost:4001/delete",
+      options
+    );
+    if (!response.ok) {
+      throw new Error("error in deleting playlist");
+    }
+  }
 
   return (
     <motion.div // Wrap the content with motion.div for scroll transitions
@@ -95,7 +113,11 @@ const Playlists = () => {
                   ></iframe>
                   <Flex gap="4" justify="center">
                     <Button className="bt1">Open in Spotify</Button>
-                    <Button className="bt1">
+                    <Button className="bt1" onClick={()=>{
+                      deletePlaylist(playlist);
+                      fetchPlaylists();
+                      window.location.reload();
+                      }}>
                       Delete Playlist from Library
                     </Button>
                   </Flex>
@@ -131,7 +153,11 @@ const Playlists = () => {
                   <Flex gap="4" justify="center">
                     {/* Flex container for the first row of buttons */}
                     <Button className="bt1">Open in Spotify</Button>
-                    <Button className="bt1">
+                    <Button className="bt1" onClick={()=>{
+                      deletePlaylist(playlist);
+                      fetchPlaylists();
+                      window.location.reload();
+                      }}>
                       Delete Playlist from Library
                     </Button>
                   </Flex>

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { newPlaylist, deleteAll } = require("../mongo");
+const { newPlaylist, deleteAll, deletePlaylist } = require("../mongo");
 const { Playlist } = require("../playlist");
 
 router.post("/mood", async (req, res) => {
@@ -12,7 +12,7 @@ router.post("/mood", async (req, res) => {
 
     let embedUrl = "";
 
-    if (emotion === "happy" || emotion === "glorious") {
+    if (emotion === "jovial" || emotion === "glorious") {
       const happyPlaylists = [
         "https://open.spotify.com/embed/playlist/7GhawGpb43Ctkq3PRP1fOL",
         "https://open.spotify.com/embed/playlist/0PzKm1C0ti5msFNWcHvXV1",
@@ -44,7 +44,7 @@ router.post("/mood", async (req, res) => {
       ];
       embedUrl =
         angryPlaylists[Math.floor(Math.random() * angryPlaylists.length)];
-    } else if (emotion === "cooked") {
+    } else if (emotion === "cooked" || emotion === "sadness") {
       const sadPlaylists = [
         "https://open.spotify.com/embed/playlist/60d30i9AHwd6j9Vorwzaku",
         "https://open.spotify.com/embed/playlist/5irzXdNeeKc0Dg3UK4Ww6n",
@@ -78,7 +78,9 @@ router.post("/mood", async (req, res) => {
     }
 
     if (embedUrl) {
-      await newPlaylist(embedUrl, date, emotion);
+      const emotions = parts[1] + ' ' + parts[0];
+      console.log(emotions);
+      await newPlaylist(embedUrl, date, emotions);
       res.json(embedUrl);
     //   deleteAll();
     } else {
@@ -96,6 +98,14 @@ router.get("/mongoPlaylists", async(req, res)=> {
     }catch(e){
         res.status(500).json({ error: 'error fetching playlists from mongoose' });
     }
+})
+
+router.post("/delete", async(req, res) => {
+  try{
+    deletePlaylist(req.body);
+  }catch(e){
+    res.status(500).json({error: 'error deleting playlist'})
+  }
 })
 
 module.exports = router;

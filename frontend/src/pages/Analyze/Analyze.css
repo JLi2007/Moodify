@@ -8,20 +8,11 @@
     position: relative;
 }
 
-.video-container {
-    width: 70%; /* Adjust as needed */
-    height: 90%; /* Reset height */
-    padding-top: 0%; /* Makes it a square */
-    position: relative;
-    overflow: hidden;
-    
-}
-
 #analyze-buttons{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60vw;
+    width: 85%;
     height: 5vh;
     position: relative;
 }
@@ -47,7 +38,7 @@
     height: 100%;
     background-color: #1DB954;
     position: absolute;
-    left: 80%;
+    right: 0;
     gap: 10%;
 }
 

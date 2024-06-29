@@ -60,8 +60,15 @@ a {
 .heading-medium {
   padding-top: 40px;
   font-size: 2.1rem !important;
-  text-decoration: underline;
-  color: rgb(228, 238, 225);
+  background: linear-gradient(
+    50deg,
+    rgb(228, 238, 225) 30%,
+    rgb(154, 217, 155) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+  padding-bottom: 2vh;
 }
 
 .no-playlist {
@@ -84,13 +91,6 @@ a {
 
 .playlist-mood{
   font-weight: bold;
-  background: linear-gradient(
-    50deg,
-    rgb(185, 214, 200) 30%,
-    rgb(148, 215, 149) 100%
-  );
-  background-clip: text;
-  color: transparent;
-  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 5px 5px 2px rgba(33, 188, 53, 0.3);
   font-size: 3rem;
 }
