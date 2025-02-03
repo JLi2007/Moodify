@@ -5,7 +5,7 @@ import "./Home.css";
 import "../../style/styles.css";
 import InteractiveButton from "../../components/InteractiveButton.jsx"; // Adjust the path as needed
 import { Link } from "react-router-dom";
-import ReviewsList from "../../components/ReviewsList.jsx";
+import ReviewsList from "./components/ReviewsList.jsx";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 
 const Home = () => {

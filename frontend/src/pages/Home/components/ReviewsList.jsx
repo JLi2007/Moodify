@@ -1,6 +1,6 @@
-import ReviewBox from "./ReviewBox";
+import ReviewBox from "./ReviewBox.jsx";
 import { useState } from "react";
-import "./Components.css";
+import "../Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { boxes } from "./Box.ts";
@@ -36,7 +36,7 @@ const ReviewsList = () => {
         &darr;
       </div>
       <div className="row justify-content-md-center">
-        {reviews.slice(0, visibleReviews).map((review, index) => review)}
+        {reviews.slice(0, visibleReviews).map((review) => review)}
       </div>
       <div className="row justify-content-md-center" id="button-div">
         <div className="col-md-auto text-center">
