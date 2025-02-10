@@ -11,6 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@detection': path.resolve(__dirname, './detection/src'),
+      'react-use-face-detection': path.resolve(__dirname, './detection/node_modules/react-use-face-detection'),
     },
   },
 });
