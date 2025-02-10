@@ -1,4 +1,4 @@
-import ManageVideoOnCanvas from "@detection/components/ManageVideoOnCanvas";
+import ManageVideoOnCanvas from "../../../detection/src/components/ManageVideoOnCanvas";
 import { Button } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./Analyze.css";
@@ -6,7 +6,7 @@ import { MagicWandIcon } from "@radix-ui/react-icons";
 import { ShuffleIcon } from "@radix-ui/react-icons";
 import sendPrediction, {
   prediction,
-} from "@detection/Common/tensorflowPredictions.js";
+} from "../../../detection/src/Common/tensorflowPredictions.js";
 
 const Analyze = () => {
   const handleButtonClick = () => {
