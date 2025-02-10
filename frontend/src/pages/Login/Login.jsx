@@ -8,6 +8,16 @@ const anonKEY = import.meta.env.VITE_ANON_KEY;
 
 const supabase = createClient(`https://${supabaseURL}.supabase.co`, anonKEY)
 
+// async function signUpNewUser() {
+//   const { data, error } = await supabase.auth.signUp({
+//     email: 'valid.email@supabase.io',
+//     password: 'example-password',
+//     options: {
+//       emailRedirectTo: 'https://example.com/welcome',
+//     },
+//   })
+// }
+
 export default function Login() {
   const [session, setSession] = useState(null)
 
